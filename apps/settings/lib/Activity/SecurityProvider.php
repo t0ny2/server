@@ -106,6 +106,7 @@ class SecurityProvider implements IProvider {
 			default:
 				throw new InvalidArgumentException();
 		}
+		$event->setRichSubject($event->getParsedSubject());
 		return $event;
 	}
 }
