@@ -21,25 +21,6 @@ style('federatedfilesharing', 'settings-personal');
 
 		<br>
 
-		<p>
-			<?php p($l->t('Share it so your friends can share files with you:')); ?><br>
-			<button class="social-facebook pop-up"
-					data-url='https://www.facebook.com/sharer/sharer.php?u=<?php p(urlencode($_['reference'])); ?>'>
-				Facebook
-			</button>
-			<button class="social-twitter pop-up"
-				data-url='https://twitter.com/intent/tweet?text=<?php p(urlencode($_['message_with_URL'])); ?>'>
-				Twitter
-			</button>
-			<button class="social-diaspora pop-up"
-					data-url='https://sharetodiaspora.github.io/?title=<?php p($_['message_without_URL']); ?>&url=<?php p(urlencode($_['reference'])); ?>'>
-				Diaspora
-			</button>
-			<button id="oca-files-sharing-add-to-your-website">
-				<?php p($l->t('Add to your website')) ?>
-			</button>
-		</p>
-
 		<div class="hidden" id="oca-files-sharing-add-to-your-website-expanded">
 		<p style="margin: 10px 0">
 			<a target="_blank" rel="noreferrer noopener" href="<?php p($_['reference']); ?>"
