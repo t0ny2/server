@@ -158,6 +158,14 @@ class CheckSetupController extends Controller {
 			'www.nextcloud.com', 'www.startpage.com', 'www.eff.org', 'www.edri.org'
 		]);
 
+		if (empty($siteArray)) {
+			return false;
+		}
+
+		if (!is_array($siteArray)) {
+			$siteArray = [$siteArray];
+		}
+
 		foreach ($siteArray as $site) {
 			if ($this->isSiteReachable($site)) {
 				return false;
