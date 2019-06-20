@@ -288,6 +288,7 @@ class LoginController extends Controller {
 	 * @param string $redirect_url
 	 * @param string $timezone
 	 * @param string $timezone_offset
+	 * @param bool   $remember
 	 *
 	 * @return RedirectResponse
 	 */
@@ -295,7 +296,8 @@ class LoginController extends Controller {
 							 string $password,
 							 string $redirect_url = null,
 							 string $timezone = '',
-							 string $timezone_offset = ''): RedirectResponse {
+							 string $timezone_offset = '',
+							 bool   $remember = false): RedirectResponse {
 		// If the user is already logged in and the CSRF check does not pass then
 		// simply redirect the user to the correct page as required. This is the
 		// case when an user has already logged-in, in another tab.
@@ -309,7 +311,8 @@ class LoginController extends Controller {
 			$password,
 			$redirect_url,
 			$timezone,
-			$timezone_offset
+			$timezone_offset,
+			$remember
 		);
 		$result = $this->loginChain->process($data);
 		if (!$result->isSuccess()) {

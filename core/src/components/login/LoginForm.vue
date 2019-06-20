@@ -86,6 +86,14 @@
 				</a>
 			</p>
 
+			<p class="groupbottom">
+				<input id="remember"
+					type="checkbox"
+					class="checkbox checkbox--white"
+					name="remember">
+				<label for="remember">Remember Me</label>
+			</p>
+
 			<LoginButton :loading="loading" :inverted-colors="invertedColors" />
 
 			<p v-if="invalidPassword"

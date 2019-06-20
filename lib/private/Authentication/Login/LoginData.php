@@ -53,20 +53,22 @@ class LoginData {
 	private $user = null;
 
 	/** @var bool */
-	private $rememberLogin = true;
+	private $rememberLogin;
 
 	public function __construct(IRequest $request,
 								string $username,
 								?string $password,
 								string $redirectUrl = null,
 								string $timeZone = '',
-								string $timeZoneOffset = '') {
+								string $timeZoneOffset = '',
+								bool   $rememberLogin = false) {
 		$this->request = $request;
 		$this->username = $username;
 		$this->password = $password;
 		$this->redirectUrl = $redirectUrl;
 		$this->timeZone = $timeZone;
 		$this->timeZoneOffset = $timeZoneOffset;
+		$this->rememberLogin = $rememberLogin;
 	}
 
 	public function getRequest(): IRequest {
